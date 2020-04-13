@@ -1,0 +1,45 @@
+.btn {
+  border: none;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn--green {
+  padding-top: 16px;
+  padding-right: 25px;
+  padding-bottom: 16px;
+  padding-left: 25px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #68b738;
+
+  &:hover {
+    background-color: #5eaa2f;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: #5eaa2f;
+  }
+}
+
+.btn--grey {
+  padding: 10px 40px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #444444;
+  background-color: #f2f2f2;
+
+  &:hover {
+    background-color: #ebebeb;
+  }
+
+  &:active {
+    color: rgba(68, 68, 68, 0.3);
+    background-color: #ebebeb;
+  }
+}

@@ -1,0 +1,381 @@
+.example {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #f2f2f2;
+}
+
+.example__wrapper {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.example__title {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 36px;
+  line-height: 60px;
+  font-weight: 500;
+  color: #111111;
+}
+
+.example__text {
+  margin: 0;
+  margin-top: 20px;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.example__stats {
+  @include row-flex();
+
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.example__stats-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+
+.example__stats > .example__stats-item {
+  &:nth-child(1),
+  &:nth-child(2) {
+    width: 42%;
+  }
+
+  &:nth-child(3) {
+    width: 100%;
+  }
+}
+
+.example__stats-item-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+  border: 1px solid #cdcdcd;
+  border-radius: 3px;
+  font-family: "Oswald", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.example__stats-item-desc {
+  position: relative;
+  top: -7px;
+  padding-right: 6.25%;
+  padding-left: 6.25%;
+  font-size: 12px;
+  text-align: center;
+  color: #444444;
+  background-color: #f2f2f2;
+}
+
+.example__expenses {
+  width: 100%;
+  margin-top: 15px;
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.example__toggle {
+  margin-top: 40px;
+}
+
+.example__toggle-item {
+  text-align: center;
+}
+
+.example__toggle-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.example__toggle-control {
+  font-family: "Oswald";
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.example__toggle-range {
+  width: 84px;
+  height: 14px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.example__toggle-scale {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #cdcdcd;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.example__toggle-btn {
+  position: absolute;
+  content: "";
+  top: 3px;
+  left: 7px;
+  width: 35px;
+  height: 6px;
+  padding: 0;
+  border: none;
+  border-radius: 3px;
+  background-color: #68b738;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .example {
+    position: relative;
+    padding-top: 45px;
+    padding-bottom: 0;
+    border-top: 1px solid #e6e6e6;
+    background-color: #ffffff;
+  }
+
+  .example__wrapper {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .example__title {
+    font-size: 60px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .example__text {
+    margin-top: 60px;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .example__stats {
+    margin-top: 55px;
+    padding-right: 30px;
+    padding-left: 30px;
+    align-items: center;
+  }
+
+  .example__stats > .example__stats-item {
+    &:nth-child(1) {
+      margin-right: 5.65%;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      width: 22.88%;
+    }
+
+    &:nth-child(2) {
+      margin-right: auto;
+    }
+
+    &:nth-child(3) {
+      width: auto;
+    }
+  }
+
+  .example__stats-item-value {
+    min-height: 70px;
+    font-size: 30px;
+    line-height: 37px;
+  }
+
+  .example__stats-item-desc {
+    padding-right: 5%;
+    padding-left: 5%;
+    font-size: 14px;
+    background-color: #ffffff;
+  }
+
+  .example__expenses {
+    width: auto;
+    margin-top: 0;
+    font-size: 20px;
+  }
+
+  .example__toggle {
+    margin-top: 80px;
+  }
+
+  .example__toggle-item {
+    padding-bottom: 120px;
+    z-index: 2;
+  }
+
+  .example__toggle-control {
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.23);
+    font-size: 20px;
+  }
+
+  .example__toggle-range {
+    width: 428px;
+    height: 6px;
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+
+  .example__toggle-scale {
+    border: none;
+    background-color: #dcdcdc;
+  }
+
+  .example__toggle-btn {
+    position: absolute;
+    content: "";
+    top: -13px;
+    left: 198px;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #cdcdcd;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: #68b738;
+    }
+  }
+
+  .example__toggle-controls {
+    position: absolute;
+    left: 50%;
+    bottom: 70px;
+    margin-top: 0;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+}
+
+@media (min-width: 1440px) {
+  .example {
+    position: relative;
+    margin-top: 25px;
+    padding-top: 55px;
+    padding-bottom: 70px;
+    border: none;
+  }
+
+  .example__wrapper {
+    @include wrapper();
+  }
+
+  .example__title {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .example__data {
+    margin-top: 65px;
+    padding-top: 70px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 180px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #f2f2f2;
+    }
+  }
+
+  .example__text {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    margin-top: 0;
+    padding-right: 170px;
+    padding-left: 0;
+  }
+
+  .example__stats {
+    position: relative;
+    width: 50%;
+    margin-top: 70px;
+    padding-right: 0;
+    padding-left: 0;
+    z-index: 1;
+  }
+
+  .example__stats > .example__stats-item:nth-child(1) {
+    margin-right: 40px;
+  }
+
+  .example__stats > .example__stats-item:nth-child(1),
+  .example__stats > .example__stats-item:nth-child(2) {
+    width: 162px;
+  }
+
+  .example__stats>.example__stats-item:nth-child(3) {
+    margin-top: 55px;
+  }
+
+  .example__stats-item-desc {
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #f2f2f2;
+  }
+
+  .example__toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    margin-top: 0;
+  }
+
+  .example__toggle-item {
+    height: 100%;
+    padding-bottom: 0;
+    z-index: unset;
+    text-align: left;
+
+    &::before {
+      z-index: unset;
+    }
+  }
+
+  .example__toggle-item > picture {
+    position: relative;
+  }
+
+  .example__toggle-controls {
+    position: absolute;
+    bottom: 68px;
+    left: 40px;
+    transform: none;
+  }
+}

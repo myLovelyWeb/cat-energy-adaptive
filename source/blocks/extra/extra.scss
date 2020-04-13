@@ -1,0 +1,133 @@
+.extra {
+  padding-top: 25px;
+  padding-bottom: 35px;
+}
+
+.extra__wrapper {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.extra__title {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-left: 20px;
+  font-family: "Oswald", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #111111;
+
+  &::after {
+    content: "";
+    flex-grow: 1;
+    height: 3px;
+    margin-left: 25px;
+    background-color: #68b738;
+  }
+}
+
+.extra__list {
+  margin: 0;
+  margin-top: 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.extra__list > li {
+  border-top: 1px solid #cdcdcd;
+
+  &:last-child {
+    border-bottom: 1px solid #cdcdcd;
+  }
+}
+
+.extra__present {
+  margin: 0;
+  margin-top: 40px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .extra {
+    padding-top: 60px;
+    padding-bottom: 75px;
+  }
+
+  .extra__title {
+    padding-left: 0;
+    font-size: 36px;
+
+    &::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      margin-right: 40px;
+      background-color: #68b738;
+    }
+  }
+
+  .extra__wrapper {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .extra__list {
+    margin-top: 75px;
+  }
+
+  .extra__list li {
+    border-top: 1px solid #cdcdcd;
+    border-right: 1px solid #cdcdcd;
+    border-left: 1px solid #cdcdcd;
+  }
+}
+
+@media (min-width: 1440px) {
+  .extra {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 87px;
+  }
+
+  .extra__title {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+    &::before {
+      flex-grow: 1;
+      width: 70px;
+    }
+
+    &::after {
+      width: 957px;
+    }
+  }
+
+  .extra__wrapper {
+    @include row-flex();
+    @include wrapper();
+
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+    padding-right: 110px;
+    padding-left: 110px;
+  }
+
+  .extra__list {
+    width: 895px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .extra__list li {
+    border-right: none;
+    border-left: none;
+  }
+
+  .extra__present {
+    margin-top: 75px;
+  }
+}

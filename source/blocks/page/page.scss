@@ -1,0 +1,54 @@
+.page {
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+.page__title {
+  margin: 0;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  font-family: "Oswald", sans-serif;
+  font-size: 36px;
+  line-height: 60px;
+  font-weight: 500;
+  color: #111111;
+}
+
+.page--inner .contacts {
+  background-color: #f2f2f2;
+}
+
+@media (min-width: 768px) {
+  .page__title {
+    margin-top: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .page--inner .page-header {
+    height: unset;
+    background: unset;
+  }
+
+  .page--inner .main-nav {
+    padding-bottom: 0;
+  }
+
+  .page--inner .main-nav__page-link {
+    color: #111111;
+  }
+
+  .page--inner .main-nav__page-link--active::after {
+    background-color: #68b738;
+  }
+
+  .page__title {
+    margin-top: 75px;
+    margin-right: auto;
+    margin-bottom: 55px;
+    margin-left: auto;
+  }
+}

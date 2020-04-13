@@ -1,0 +1,14 @@
+@media (min-width: 1440px) {
+  .page-header {
+    background: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(100,168,59,1) 50%);
+  }
+
+  .page-header__wrapper {
+    max-width: 1440px;
+    height: 560px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 75px;
+    padding-left: 190px;
+  }
+}

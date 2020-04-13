@@ -1,0 +1,159 @@
+.hero__top {
+  position: relative;
+}
+
+.hero__text-wrapper {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  left: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.hero__title {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hero b {
+  display: block;
+  margin-top: 20px;
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.hero__img-wrapper {
+  margin: 0;
+}
+
+.hero__img-wrapper--cat {
+  text-align: center;
+  background-color: #65a93c;
+}
+
+.hero__img-wrapper--product {
+  position: absolute;
+  bottom: -130px;
+  left: 50%;
+  width: 280px;
+  height: 270px;
+  transform: translateX(-50%);
+  text-align: center;
+  background-color: transparent;
+}
+
+.hero__bottom {
+  padding-top: 135px;
+  padding-right: 20px;
+  padding-bottom: 22px;
+  padding-left: 20px;
+}
+
+.hero__btn {
+  display: block;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    min-height: 840px;
+    padding-top: 30px;
+    position: relative;
+  }
+
+  .hero__top {
+    position: static;
+  }
+
+  .hero__text-wrapper {
+    position: static;
+    padding-right: 200px;
+    padding-left: 120px;
+  }
+
+  .hero__title {
+    width: 415px;
+    font-size: 60px;
+    text-align: left;
+    color: #111111;
+  }
+
+  .hero b {
+    font-size: 20px;
+    text-align: left;
+    color: #111111;
+  }
+
+  .hero__img-wrapper--cat {
+    display: none;
+  }
+
+  .hero__img-wrapper--product {
+    width: 604px;
+    height: 600px;
+    z-index: -1;
+    bottom: 10px;
+  }
+
+  .hero__bottom {
+    padding-top: 45px;
+    padding-right: 0;
+    padding-left: 120px;
+  }
+
+  .hero__btn {
+    width: 245px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero {
+    position: static;
+    min-height: auto;
+    padding-top: 0;
+  }
+
+  .hero__top {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .hero__text-wrapper {
+    width: 50%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .hero__img-wrapper--product {
+    top: 138px;
+    bottom: unset;
+    left: 50%;
+    width: 552px;
+    height: 499px;
+    transform: translateX(-28.5%);
+    z-index: 3;
+  }
+
+  .hero__img-wrapper--cat {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 720px;
+    height: 696px;
+    background-color: transparent;
+  }
+
+  .hero__bottom {
+    padding-left: 0;
+  }
+}
