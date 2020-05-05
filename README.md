@@ -22,6 +22,5 @@
 - используемый шрифт: Oswald (medium)
 
 ## скрипты:
-- "dev": "gulp build --dev && gulp serve"
+- "dev": "gulp build && gulp serve"
 - "build": "gulp build"
-- "start": "gulp start"
