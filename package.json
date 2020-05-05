@@ -24,7 +24,6 @@
   },
   "scripts": {
     "dev": "gulp build --dev && gulp serve",
-    "build": "gulp build",
-    "start": "gulp start"
+    "build": "gulp build"
   }
 }
