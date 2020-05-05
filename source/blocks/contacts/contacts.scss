@@ -35,9 +35,14 @@
 .contacts__map {
   height: 400px;
   margin: 0;
+  text-align: center;
   background-image: url("../img/map--mobile.png");
   background-repeat: no-repeat;
   background-position: top center;
+
+  & > iframe {
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -63,7 +68,6 @@
   }
 
   .contacts__map {
-    height: 400px;
     background-image: url("../img/map--tablet.png");
   }
 }

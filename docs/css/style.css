@@ -1026,9 +1026,12 @@ input[type="checkbox"]:checked + .input-checkbox::after {
 .contacts__map {
   height: 400px;
   margin: 0;
+  text-align: center;
   background-image: url("../img/map--mobile.png");
   background-repeat: no-repeat;
   background-position: top center; }
+  .contacts__map > iframe {
+    width: 100%; }
 
 .page-footer {
   padding-top: 40px;
@@ -1711,7 +1714,6 @@ input[type="checkbox"]:checked + .input-checkbox::after {
     font-size: 16px;
     line-height: 20px; }
   .contacts__map {
-    height: 400px;
     background-image: url("../img/map--tablet.png"); }
   .page-footer {
     padding-top: 55px;
