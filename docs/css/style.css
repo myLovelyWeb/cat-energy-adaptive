@@ -1317,21 +1317,15 @@ input[type="checkbox"]:active + .checkbox__box {
 
 .suggestion__form-list {
   margin: 0;
+  margin-top: -15px;
   padding: 0;
   list-style: none; }
-
-.suggestion__form-list li:not(:first-child) .input-text,
-.suggestion__form-list li:not(:first-child) .input-number {
-  margin-top: 15px; }
+  .suggestion__form-list > li {
+    margin-top: 15px; }
 
 .suggestion__form > .suggestion__wrapper > fieldset:nth-child(2) {
   border-top: 1px solid #ededed;
   border-bottom: 1px solid #ededed; }
-
-.suggestion__form-list--radio {
-  margin-top: -15px; }
-  .suggestion__form-list--radio > li {
-    margin-top: 15px; }
 
 .suggestion__form legend {
   display: flex;
@@ -1358,15 +1352,6 @@ input[type="checkbox"]:active + .checkbox__box {
   display: block;
   order: 1;
   width: 100%; }
-
-.suggestion__form-list li:not(:first-child) .input-email,
-.suggestion__form-list li:not(:first-child) .input-tel {
-  margin-top: 15px; }
-
-.suggestion__form-list--checkbox {
-  margin-top: -15px; }
-  .suggestion__form-list--checkbox > li {
-    margin-top: 15px; }
 
 .suggestion__form > .wrapper:last-child {
   margin-top: 35px; }
@@ -1911,17 +1896,9 @@ input[type="checkbox"]:active + .checkbox__box {
         padding-bottom: 25px;
         padding-left: 30px;
         border: 1px solid #ededed; }
-  .suggestion__form > fieldset:nth-child(1) {
-    padding-right: 70px;
-    padding-bottom: 70px;
-    padding-left: 70px;
-    border: none; }
   .suggestion__form > fieldset:nth-child(3),
   .suggestion__form > fieldset:nth-child(4) {
     margin-top: 65px; }
-  .suggestion__form-list li:not(:first-child) .input-number,
-  .suggestion__form-list li:not(:first-child) .input-text {
-    margin-top: 20px; }
   .suggestion__form legend {
     margin-bottom: 70px;
     padding-left: 0;
@@ -1948,14 +1925,19 @@ input[type="checkbox"]:active + .checkbox__box {
   .suggestion__form legend + .suggestion__form-list {
     padding-right: 70px;
     padding-left: 70px; }
-  .suggestion__form-list li:not(:first-child) .input-email,
-  .suggestion__form-list li:not(:first-child) .input-tel {
-    margin-top: 20px; }
+  .suggestion__form-list {
+    margin-top: -20px; }
+    .suggestion__form-list > li {
+      margin-top: 20px; }
   .suggestion__form > fieldset:nth-child(4) > .wrapper {
     padding-right: 70px;
     padding-left: 70px; }
   .suggestion__form > fieldset:nth-child(5) > legend {
     margin-bottom: 50px; }
+  .suggestion__form-list--radio {
+    margin-top: -15px; }
+    .suggestion__form-list--radio > li {
+      margin-top: 15px; }
   .suggestion__form-list--checkbox {
     margin-top: -30px; }
     .suggestion__form-list--checkbox > li {
@@ -2317,16 +2299,14 @@ input[type="checkbox"]:active + .checkbox__box {
   .suggestion__form > .wrapper > fieldset > .suggestion__form-list {
     padding-right: 0;
     padding-left: 0; }
-  .suggestion__form > fieldset {
-    /*&:nth-child(2) {
-      width: 39.09%;
-      margin-right: 7.63%;
-      margin-left: 0;
-      padding-right: 0;
-      padding-left: 27px;
-    }*/ }
-    .suggestion__form > fieldset:nth-child(3), .suggestion__form > fieldset:nth-child(4), .suggestion__form > fieldset:nth-child(5) {
-      width: 100%; }
+  .suggestion__form > fieldset:nth-child(3), .suggestion__form > fieldset:nth-child(4), .suggestion__form > fieldset:nth-child(5) {
+    width: 100%; }
+  .suggestion__form > fieldset:nth-child(4) > .wrapper {
+    padding-right: 110px;
+    padding-left: 110px; }
+  fieldset > .wrapper {
+    padding-right: 110px;
+    padding-left: 110px; }
   .suggestion__form legend::before {
     width: 70px; }
   .suggestion__form legend + .suggestion__form-list {
@@ -2335,14 +2315,10 @@ input[type="checkbox"]:active + .checkbox__box {
   .suggestion__form-list--contacts {
     display: flex;
     justify-content: space-between; }
-  .suggestion__form-list--contacts li {
-    width: 46.72%; }
-  .suggestion__form-list li:not(:first-child) .input-tel {
-    margin-top: 0; }
+    .suggestion__form-list--contacts > li {
+      width: 570px; }
   .suggestion__form-list--checkbox > li {
     width: 25%; }
-  .suggestion__form-list li:nth-child(n+3) .input-checkbox {
-    margin-top: 0; }
   .suggestion__form > .wrapper:last-child {
     width: 1440px;
     justify-content: flex-start; }
