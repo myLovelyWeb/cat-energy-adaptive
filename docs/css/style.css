@@ -667,6 +667,15 @@ input[type="checkbox"]:active + .checkbox__box {
     height: 2px;
     background-color: #68b738; }
 
+.main-nav--no-js > .main-nav__top-menu {
+  justify-content: center; }
+
+.main-nav--no-js .main-nav__logo--text {
+  margin-left: 20px; }
+
+.main-nav--no-js .main-nav__toggle {
+  display: none; }
+
 .adaptive-logo--mobile {
   width: 33px;
   height: 38px; }
@@ -2387,6 +2396,8 @@ input[type="checkbox"]:active + .checkbox__box {
     border-bottom: 1px solid #e6e6e6; }
   .main-nav--closed > .main-nav__page-list {
     display: none; }
+  .main-nav--no-js > .main-nav__page-list {
+    display: block; }
   .main-nav__page-list {
     position: absolute;
     top: 66px;
