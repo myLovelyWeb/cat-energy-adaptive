@@ -12,12 +12,17 @@
 }
 
 .main-nav__logo {
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 0.8;
   }
 
   &:active {
     opacity: 0.6;
+  }
+
+  &:not([href]) {
+    opacity: 0.3;
   }
 }
 
@@ -27,6 +32,14 @@
   border: none;
   background-color: #ffffff;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.3;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
 .main-nav--closed .main-nav__toggle {
@@ -86,8 +99,13 @@
   text-transform: uppercase;
   color: #111111;
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 0.6;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
   }
 
   &:active {

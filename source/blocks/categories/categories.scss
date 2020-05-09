@@ -71,7 +71,7 @@
 
 .categories__item-link {
   display: inline-block;
-  padding-top: 20px;
+  margin-top: 20px;
   padding-right: 50px;
   position: relative;
   font-family: "Oswald", sans-serif;
@@ -93,7 +93,8 @@
     background-repeat: no-repeat;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     padding-right: 60px;
 
     &::after {

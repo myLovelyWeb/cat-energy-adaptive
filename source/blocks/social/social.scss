@@ -12,39 +12,45 @@
   padding-bottom: 17px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0;
   list-style: none;
 }
 
-.social__list li {
+.social__list > li {
   margin: 0 20px;
 }
 
-.social__link svg {
-  fill: #666666;
-}
+.social__link {
+  font-size: 0;
 
-.social__link:hover svg {
-  fill: #68b738;
-}
+  & > svg {
+    fill: #666666;
+  }
 
-.social__link:active svg {
-  fill: #68b738;
-  opacity: 0.3;
-}
+  &--vk > svg {
+    width: 22px;
+    height: 12px;
+  }
 
-.social__link--vk svg {
-  width: 22px;
-  height: 12px;
-}
+  &--insta > svg {
+    width: 16px;
+    height: 16px;
+  }
 
-.social__link--insta svg {
-  width: 16px;
-  height: 16px;
-}
+  &--fb > svg {
+    width: 10px;
+    height: 19px;
+  }
 
-.social__link--fb svg {
-  width: 10px;
-  height: 19px;
+  &:hover > svg,
+  &:focus > svg {
+    fill: #68b738;
+  }
+
+  &:active svg {
+    fill: #68b738;
+    opacity: 0.3;
+  }
 }
 
 @media (min-width: 768px) {

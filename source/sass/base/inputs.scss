@@ -10,9 +10,9 @@ input[type="tel"] {
   font-weight: 500;
   text-transform: uppercase;
   color: #444444;
-  outline: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: #cdcdcd;
   }
 
@@ -72,7 +72,7 @@ input[type="tel"] {
     border-radius: 50%;
   }
 
-  &:hover::before {
+  &:hover > .radio__box {
     border-color: #bababa;
   }
 
@@ -81,17 +81,28 @@ input[type="tel"] {
   }
 }
 
-input[type="radio"]:checked + .radio__box::before {
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background-color: #68b738;
+input[type="radio"] {
+  &:checked + .radio__box::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #68b738;
+  }
+
+  &:focus + .radio__box {
+    outline-color: rgb(77, 144, 254);
+    outline-offset: -2px;
+    outline-style: auto;
+    outline-width: 5px;
+  }
 }
+
+
 
 .input-email {
   display: flex;
@@ -155,9 +166,9 @@ textarea {
   font-weight: 500;
   text-transform: uppercase;
   color: #444444;
-  outline: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: #cdcdcd;
   }
 
@@ -227,7 +238,7 @@ input[type="checkbox"] {
 @media (min-width: 768px) {
   .input-text,
   .input-number,
-  .input-radio {
+  .radio {
     font-size: 20px;
   }
 
@@ -239,20 +250,19 @@ input[type="checkbox"] {
     font-size: 20px;
   }
 
-  .input-radio {
-    padding-top: 12px;
-    padding-bottom: 6px;
+  .radio {
+    min-height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     padding-left: 60px;
 
-    &::before {
+    &__box {
       width: 40px;
       height: 40px;
     }
   }
 
-  input[type=radio]:checked + .input-radio::after {
-    top: 11px;
-    left: 11px;
+  input[type=radio]:checked + .radio__box::before {
     width: 18px;
     height: 18px;
   }
@@ -304,9 +314,5 @@ input[type="checkbox"] {
       width: 40px;
       height: 40px;
     }
-  }
-
-  input[type=checkbox]:checked + .input-checkbox::after {
-    left: 10px;
   }
 }
