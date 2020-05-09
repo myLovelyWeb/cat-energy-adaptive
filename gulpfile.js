@@ -10,6 +10,7 @@ const minify = require('gulp-csso');
 const mqpacker = require("css-mqpacker");
 const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
+const postcssFocusVisible = require('postcss-focus-visible');
 const posthtml = require('gulp-posthtml');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
@@ -27,7 +28,7 @@ gulp.task('copy', function() {
   return gulp.src([
     'source/*.html',
     'source/fonts/**/*.{woff,woff2}',
-    'source/vendor/**'
+    'source/libs/**'
   ], {
     base: 'source'
   })
@@ -102,6 +103,7 @@ gulp.task('style', function() {
     }))
     .pipe(postcss([
       autoprefixer('> 0.2%'),
+      postcssFocusVisible({preserve: false}),
       mqpacker({sort: true})
     ]))
     .pipe(gulp.dest('docs/css'))

@@ -39,60 +39,73 @@
           <p class="suggestion__text">Заполните анкету и мы подберем<br> программу питания для вашего кота</p>
         </div>
         <form class="suggestion__form">
-          <fieldset>
-            <ul class="suggestion__form-list">
-              <li>
-                <label for="cat-name" class="input-text">
-                  <span>Имя:*</span>
-                  <input id="cat-name" type="text" name="cat-name" placeholder="Барсик">
-                </label>
-              </li>
-              <li>
-                <label class="input-number">
-                  <span>Вес (кг):*</span>
-                  <input type="number" name="cat-weight" placeholder="7">
-                </label>
-              </li>
-              <li>
-                <label class="input-number">
-                  <span>Возраст (лет):</span>
-                  <input type="number" name="cat-age" placeholder="7">
-                </label>
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset>
-            <ul class="suggestion__form-list">
-              <li>
-                <input id="losing-weight" type="radio" name="aim" value="losing-weight" checked>
-                <label for="losing-weight" class="input-radio">Похудение</label>
-              </li>
-              <li>
-                <input id="gaining-weight" type="radio" name="aim" value="gaining-weight">
-                <label for="gaining-weight" class="input-radio">Набор массы</label>
-              </li>
-              <li>
-                <input id="unknow" type="radio" name="aim" value="unknow">
-                <label for="unknow" class="input-radio">Не знаю (Нужен ваш совет)</label>
-              </li>
-            </ul>
-          </fieldset>
+          <div class="wrapper">
+            <fieldset>
+              <ul class="suggestion__form-list">
+                <li>
+                  <label for="cat-name" class="input-text">
+                    <span>Имя:*</span>
+                    <input id="cat-name" type="text" name="cat-name" placeholder="Барсик">
+                  </label>
+                </li>
+                <li>
+                  <label class="input-number">
+                    <span>Вес (кг):*</span>
+                    <input type="number" name="cat-weight" placeholder="7">
+                  </label>
+                </li>
+                <li>
+                  <label class="input-number">
+                    <span>Возраст (лет):</span>
+                    <input type="number" name="cat-age" placeholder="7">
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset>
+              <ul class="suggestion__form-list suggestion__form-list--radio">
+                <li>
+                  <label class="radio">
+                    <input type="radio" class="visually-hidden" name="aim" value="losing-weight" checked>
+                    <span class="radio__box"></span>
+                    Похудение
+                  </label>
+                </li>
+                <li>
+                  <label class="radio">
+                    <input type="radio" class="visually-hidden" name="aim" value="gaining-weight">
+                    <span class="radio__box"></span>
+                    Набор массы
+                  </label>
+                </li>
+                <li>
+                  <label class="radio">
+                    <input type="radio" class="visually-hidden" name="aim" value="unknow">
+                    <span class="radio__box"></span>
+                    Не знаю (Нужен ваш совет)
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
           <fieldset>
             <legend>Контактные данные <span> (владельца кота)</span></legend>
-            <ul class="suggestion__form-list suggestion__form-list--contacts wrapper">
-              <li>
-                <label class="input-email">
-                  <span>E-mail:*</span>
-                  <input type="email" placeholder="kuklachev@gmail.com">
-                </label>
-              </li>
-              <li>
-                <label class="input-tel">
-                  <span>Телефон:*</span>
-                  <input type="tel" placeholder="8 (960) 900-60-90">
-                </label>
-              </li>
-            </ul>
+            <div class="wrapper">
+              <ul class="suggestion__form-list suggestion__form-list--contacts">
+                <li>
+                  <label class="input-email">
+                    <span>E-mail:*</span>
+                    <input type="email" placeholder="kuklachev@gmail.com">
+                  </label>
+                </li>
+                <li>
+                  <label class="input-tel">
+                    <span>Телефон:*</span>
+                    <input type="tel" placeholder="8 (960) 900-60-90">
+                  </label>
+                </li>
+              </ul>
+            </div>
           </fieldset>
           <fieldset>
             <legend>Комментарий</legend>
@@ -102,24 +115,38 @@
           </fieldset>
           <fieldset>
             <legend>Дополнительно</legend>
-            <ul class="suggestion__form-list suggestion__form-list--checkbox wrapper">
-              <li>
-                <input type="checkbox" id="extra-вugar-substitute" checked>
-                <label for="extra-вugar-substitute" class="input-checkbox">Сахарозаменитель</label>
-              </li>
-              <li>
-                <input type="checkbox" id="extra-water">
-                <label class="input-checkbox" for="extra-water">Питьевая вода</label>
-              </li>
-              <li>
-                <input type="checkbox" id="extra-milk">
-                <label class="input-checkbox" for="extra-milk">Молоко</label>
-              </li>
-              <li>
-                <input type="checkbox" id="extra-vitamins">
-                <label class="input-checkbox" for="extra-vitamins">Витамины</label>
-              </li>
-            </ul>
+            <div class="wrapper">
+              <ul class="suggestion__form-list suggestion__form-list--checkbox">
+                <li>
+                  <label class="checkbox">
+                    <input type="checkbox" class="visually-hidden" name="additional" value="sugar-sub" checked>
+                    <span class="checkbox__box"></span>
+                    Сахарозаменитель
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox">
+                    <input type="checkbox" class="visually-hidden" name="additional" value="water">
+                    <span class="checkbox__box"></span>
+                    Питьевая вода
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox">
+                    <input type="checkbox" class="visually-hidden" name="additional" value="milk">
+                    <span class="checkbox__box"></span>
+                    Молоко
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox">
+                    <input type="checkbox" class="visually-hidden" name="additional" value="vitamins">
+                    <span class="checkbox__box"></span>
+                    Витамины
+                  </label>
+                </li>
+              </ul>
+            </div>
           </fieldset>
           <div class="wrapper">
             <button class="btn btn--green suggestion__form-btn" type="submit">Отправить заявку</button>
@@ -169,5 +196,6 @@
       </div>
     </footer>
     <script src="js/scripts.min.js"></script>
+    <script src="libs/focus-visible/focus-visible.min.js"></script>
   </body>
 </html>

@@ -396,42 +396,40 @@ input[type="tel"] {
   flex-shrink: 0;
   margin-right: 15px; }
 
-input[type="radio"] {
-  display: none; }
-
-.input-radio {
+.radio {
   display: inline-block;
   position: relative;
-  padding-top: 8px;
-  padding-bottom: 4px;
+  min-height: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 45px;
   font-family: "Oswald", sans-serif;
   font-size: 16px;
   text-transform: uppercase;
   color: #222222;
   cursor: pointer; }
-  .input-radio::before {
+  .radio__box {
     position: absolute;
     content: "";
-    top: 50%;
+    top: 0;
     left: 0;
     width: 30px;
     height: 30px;
     border: 1px solid #cdcdcd;
-    transform: translateY(-50%);
     border-radius: 50%; }
-  .input-radio:hover::before {
+  .radio:hover::before {
     border-color: #bababa; }
-  .input-radio:active {
+  .radio:active {
     opacity: 0.3; }
 
-input[type="radio"]:checked + .input-radio::after {
+input[type="radio"]:checked + .radio__box::before {
   position: absolute;
   content: "";
-  top: 9px;
-  left: 9px;
+  top: 50%;
+  left: 50%;
   width: 12px;
   height: 12px;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   background-color: #68b738; }
 
@@ -498,43 +496,47 @@ textarea {
   textarea:invalid {
     border-color: #ff8282; }
 
-input[type="checkbox"] {
-  display: none; }
-
-.input-checkbox {
+.checkbox {
   display: inline-block;
   position: relative;
+  min-height: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 45px;
   font-family: "Oswald", sans-serif;
   font-size: 16px;
-  line-height: 30px;
   text-transform: uppercase;
   color: #222222;
   cursor: pointer; }
-  .input-checkbox::before {
+  .checkbox__box {
     position: absolute;
     content: "";
-    top: 50%;
+    top: 0;
     left: 0;
     width: 30px;
     height: 30px;
-    border: 1px solid #cdcdcd;
-    transform: translateY(-50%); }
-  .input-checkbox:hover::before {
+    border: 1px solid #cdcdcd; }
+  .checkbox:hover > .checkbox__box {
     border-color: #bababa; }
-  .input-checkbox:active {
-    opacity: 0.3; }
 
-input[type="checkbox"]:checked + .input-checkbox::after {
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 5px;
-  width: 21px;
-  height: 16px;
-  transform: translateY(-50%);
-  background-image: url("../img/tick.svg");
-  background-repeat: no-repeat; }
+input[type="checkbox"]:checked + .checkbox__box {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21 16'%3E%3Cpath fill='%2368b738' d='M20.075 0L7.729 13.304 1.025 6.08 0 7.185l7.626 8.218.103.11L20.998 1.215l.102-.11z'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 21px 16px; }
+
+input[type="checkbox"]:focus + .checkbox__box {
+  border-color: #bababa;
+  outline-color: #4d90fe;
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 5px; }
+
+input[type="checkbox"]:focus:not(.focus-visible) + .checkbox__box {
+  outline: none; }
+
+input[type="checkbox"]:active + .checkbox__box {
+  opacity: 0.3; }
 
 .wrapper {
   max-width: 1440px;
@@ -1298,27 +1300,20 @@ input[type="checkbox"]:checked + .input-checkbox::after {
 .suggestion__form {
   margin-top: 40px;
   padding-bottom: 30px; }
-
-.suggestion__form > fieldset {
-  margin: 0;
-  padding: 0;
-  border: none; }
-  .suggestion__form > fieldset:nth-child(1) {
-    padding-right: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px; }
-  .suggestion__form > fieldset:nth-child(2) {
-    margin-bottom: 23px;
+  .suggestion__form fieldset {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none; }
+  .suggestion__form > fieldset:nth-of-type(2),
+  .suggestion__form > fieldset:nth-of-type(3) {
+    margin-top: 30px; }
+  .suggestion__form > .wrapper > fieldset:nth-child(2) {
+    margin-top: 25px;
+    margin-bottom: 25px;
     padding-top: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px; }
-  .suggestion__form > fieldset:nth-child(1), .suggestion__form > fieldset:nth-child(2) {
-    border-bottom: 1px solid #ededed; }
-  .suggestion__form > fieldset:nth-child(3) {
-    padding-bottom: 27px; }
-  .suggestion__form > fieldset:nth-child(4) {
-    padding-bottom: 30px; }
+    border-top: 1px solid #ededed;
+    padding-bottom: 20px; }
 
 .suggestion__form-list {
   margin: 0;
@@ -1329,14 +1324,20 @@ input[type="checkbox"]:checked + .input-checkbox::after {
 .suggestion__form-list li:not(:first-child) .input-number {
   margin-top: 15px; }
 
-.suggestion__form-list li:not(:first-child) .input-radio {
-  margin-top: 13px; }
+.suggestion__form > .suggestion__wrapper > fieldset:nth-child(2) {
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed; }
+
+.suggestion__form-list--radio {
+  margin-top: -15px; }
+  .suggestion__form-list--radio > li {
+    margin-top: 15px; }
 
 .suggestion__form legend {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
   padding-left: 20px;
   position: relative;
   font-family: "Oswald", sans-serif;
@@ -1349,7 +1350,6 @@ input[type="checkbox"]:checked + .input-checkbox::after {
     content: "";
     top: 10px;
     flex-grow: 1;
-    width: 100px;
     height: 3px;
     margin-left: 22px;
     background-color: #68b738; }
@@ -1363,8 +1363,10 @@ input[type="checkbox"]:checked + .input-checkbox::after {
 .suggestion__form-list li:not(:first-child) .input-tel {
   margin-top: 15px; }
 
-.suggestion__form-list li:not(:first-child) .input-checkbox {
-  margin-top: 13px; }
+.suggestion__form-list--checkbox {
+  margin-top: -15px; }
+  .suggestion__form-list--checkbox > li {
+    margin-top: 15px; }
 
 .suggestion__form > .wrapper:last-child {
   margin-top: 35px; }
@@ -1397,6 +1399,14 @@ input[type="checkbox"]:checked + .input-checkbox::after {
       padding-right: 20px; }
     .advantages {
       padding-left: 20px;
+      padding-right: 20px; } }
+
+@media (min-width: 480px) {
+  .suggestion__form-list--checkbox {
+    display: flex;
+    flex-wrap: wrap; }
+    .suggestion__form-list--checkbox > li {
+      width: 50%;
       padding-right: 20px; } }
 
 @media (min-width: 768px) {
@@ -1444,11 +1454,13 @@ input[type="checkbox"]:checked + .input-checkbox::after {
     font-size: 20px;
     line-height: 30px;
     text-transform: uppercase; }
-  .input-checkbox {
+  .checkbox {
+    min-height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     padding-left: 60px;
-    font-size: 20px;
-    line-height: 40px; }
-    .input-checkbox::before {
+    font-size: 20px; }
+    .checkbox__box {
       width: 40px;
       height: 40px; }
   input[type=checkbox]:checked + .input-checkbox::after {
@@ -1881,31 +1893,35 @@ input[type="checkbox"]:checked + .input-checkbox::after {
     margin-top: 20px; }
   .suggestion {
     padding-top: 50px; }
+    .suggestion > .wrapper {
+      padding-right: 70px;
+      padding-left: 70px; }
   .suggestion__text {
-    padding-right: 40px;
-    padding-left: 40px;
     font-size: 20px;
     line-height: 30px;
     text-transform: uppercase; }
   .suggestion__form {
     margin-top: 65px; }
+    .suggestion__form > .wrapper {
+      padding-right: 70px;
+      padding-left: 70px; }
+      .suggestion__form > .wrapper > fieldset:nth-child(2) {
+        padding-top: 25px;
+        padding-right: 30px;
+        padding-bottom: 25px;
+        padding-left: 30px;
+        border: 1px solid #ededed; }
   .suggestion__form > fieldset:nth-child(1) {
     padding-right: 70px;
     padding-bottom: 70px;
     padding-left: 70px;
     border: none; }
+  .suggestion__form > fieldset:nth-child(3),
+  .suggestion__form > fieldset:nth-child(4) {
+    margin-top: 65px; }
   .suggestion__form-list li:not(:first-child) .input-number,
   .suggestion__form-list li:not(:first-child) .input-text {
     margin-top: 20px; }
-  .suggestion__form > fieldset:nth-child(2) {
-    margin-right: 70px;
-    margin-bottom: 70px;
-    margin-left: 70px;
-    padding-top: 25px;
-    padding-right: 28px;
-    padding-bottom: 25px;
-    padding-left: 28px;
-    border: 1px solid #ededed; }
   .suggestion__form legend {
     margin-bottom: 70px;
     padding-left: 0;
@@ -1926,36 +1942,29 @@ input[type="checkbox"]:checked + .input-checkbox::after {
     order: 0;
     width: auto;
     margin-left: 15px; }
+  fieldset > .wrapper {
+    padding-right: 70px;
+    padding-left: 70px; }
   .suggestion__form legend + .suggestion__form-list {
     padding-right: 70px;
     padding-left: 70px; }
-  .suggestion__form > fieldset:nth-child(3) {
-    padding-bottom: 63px; }
   .suggestion__form-list li:not(:first-child) .input-email,
   .suggestion__form-list li:not(:first-child) .input-tel {
     margin-top: 20px; }
-  .suggestion__form > fieldset:nth-child(4) {
-    padding-bottom: 63px; }
   .suggestion__form > fieldset:nth-child(4) > .wrapper {
     padding-right: 70px;
     padding-left: 70px; }
   .suggestion__form > fieldset:nth-child(5) > legend {
     margin-bottom: 50px; }
   .suggestion__form-list--checkbox {
-    display: flex;
-    flex-wrap: wrap; }
-  .suggestion__form-list--checkbox li {
-    width: 50%; }
-  .suggestion__form-list li:not(:first-child) .input-checkbox {
-    margin-top: 0; }
-  .suggestion__form-list li:nth-child(n + 3) .input-checkbox {
-    margin-top: 32px; }
+    margin-top: -30px; }
+    .suggestion__form-list--checkbox > li {
+      margin-top: 30px;
+      padding-right: 40px; }
   .suggestion__form > .wrapper:last-child {
     display: flex;
     align-items: center;
-    margin-top: 55px;
-    padding-right: 70px;
-    padding-left: 70px; }
+    margin-top: 55px; }
   .suggestion__form-btn {
     width: 283px;
     margin-top: 0;
@@ -2276,26 +2285,48 @@ input[type="checkbox"]:checked + .input-checkbox::after {
     margin-top: 0; }
   .suggestion {
     padding-top: 0; }
+    .suggestion > .wrapper {
+      padding-right: 110px;
+      padding-left: 110px; }
   .suggestion__text {
-    padding-right: 7.63%;
-    padding-left: 7.63%; }
+    padding-right: 0;
+    padding-left: 0; }
   .suggestion__form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding-bottom: 80px; }
-  .suggestion__form > fieldset:nth-child(1) {
-    width: 46.72%;
+    .suggestion__form > fieldset:nth-of-type(1) {
+      margin-top: 75px; }
+  .suggestion__form > .wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 110px;
+    padding-left: 110px; }
+  .suggestion__form > .wrapper > fieldset {
+    width: 570px;
     padding-right: 0;
-    padding-left: 7.63%; }
-  .suggestion__form > fieldset:nth-child(2) {
-    width: 39.09%;
-    margin-right: 7.63%;
-    margin-left: 0;
+    padding-left: 0; }
+    .suggestion__form > .wrapper > fieldset:nth-child(1) {
+      padding-bottom: 0;
+      border-bottom: none; }
+    .suggestion__form > .wrapper > fieldset:nth-child(2) {
+      margin-top: 0;
+      margin-bottom: 0; }
+  .suggestion__form > .wrapper > fieldset > .suggestion__form-list {
     padding-right: 0;
-    padding-left: 27px; }
-  .suggestion__form > fieldset:nth-child(3), .suggestion__form > fieldset:nth-child(4), .suggestion__form > fieldset:nth-child(5) {
-    width: 100%; }
+    padding-left: 0; }
+  .suggestion__form > fieldset {
+    /*&:nth-child(2) {
+      width: 39.09%;
+      margin-right: 7.63%;
+      margin-left: 0;
+      padding-right: 0;
+      padding-left: 27px;
+    }*/ }
+    .suggestion__form > fieldset:nth-child(3), .suggestion__form > fieldset:nth-child(4), .suggestion__form > fieldset:nth-child(5) {
+      width: 100%; }
   .suggestion__form legend::before {
     width: 70px; }
   .suggestion__form legend + .suggestion__form-list {
@@ -2308,10 +2339,8 @@ input[type="checkbox"]:checked + .input-checkbox::after {
     width: 46.72%; }
   .suggestion__form-list li:not(:first-child) .input-tel {
     margin-top: 0; }
-  .suggestion__form-list--checkbox {
-    justify-content: space-between; }
-  .suggestion__form-list--checkbox li {
-    width: 20%; }
+  .suggestion__form-list--checkbox > li {
+    width: 25%; }
   .suggestion__form-list li:nth-child(n+3) .input-checkbox {
     margin-top: 0; }
   .suggestion__form > .wrapper:last-child {
