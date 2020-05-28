@@ -50,6 +50,11 @@
   padding: 10px;
   font-size: 16px;
   line-height: 20px;
+
+  &:not([href]) {
+    opacity: 0.3;
+    pointer-events: none;
+  }
 }
 
 .product--more {

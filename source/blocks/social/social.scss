@@ -23,6 +23,11 @@
 .social__link {
   font-size: 0;
 
+  &:not([href]) {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
   & > svg {
     fill: #666666;
   }
@@ -32,7 +37,7 @@
     height: 12px;
   }
 
-  &--insta > svg {
+  &--twitter > svg {
     width: 16px;
     height: 16px;
   }
@@ -69,7 +74,7 @@
     height: 16px;
   }
 
-  .social__link--insta svg {
+  .social__link--twitter svg {
     width: 23px;
     height: 23px;
   }

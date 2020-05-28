@@ -743,6 +743,9 @@ input[type="checkbox"]:active + .checkbox__box {
 .hero__btn {
   display: block;
   width: 100%; }
+  .hero__btn:not([href]) {
+    opacity: 0.3;
+    pointer-events: none; }
 
 .categories {
   max-width: 1440px;
@@ -1120,12 +1123,15 @@ input[type="checkbox"]:active + .checkbox__box {
 
 .social__link {
   font-size: 0; }
+  .social__link:not([href]) {
+    opacity: 0.3;
+    pointer-events: none; }
   .social__link > svg {
     fill: #666666; }
   .social__link--vk > svg {
     width: 22px;
     height: 12px; }
-  .social__link--insta > svg {
+  .social__link--twitter > svg {
     width: 16px;
     height: 16px; }
   .social__link--fb > svg {
@@ -1200,6 +1206,9 @@ input[type="checkbox"]:active + .checkbox__box {
   padding: 10px;
   font-size: 16px;
   line-height: 20px; }
+  .product__link:not([href]) {
+    opacity: 0.3;
+    pointer-events: none; }
 
 .product--more {
   position: relative;
@@ -1315,6 +1324,9 @@ input[type="checkbox"]:active + .checkbox__box {
   padding: 10px;
   font-size: 16px;
   line-height: 20px; }
+  .additional__link:not([href]) {
+    opacity: 0.3;
+    pointer-events: none; }
 
 .suggestion__text {
   margin: 0;
@@ -1388,7 +1400,9 @@ input[type="checkbox"]:active + .checkbox__box {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  line-height: 20px; }
+  line-height: 20px;
+  opacity: 0.3;
+  pointer-events: none; }
 
 .suggestion__form-required {
   display: block;
@@ -1764,7 +1778,7 @@ input[type="checkbox"]:active + .checkbox__box {
   .social__link--vk svg {
     width: 30px;
     height: 16px; }
-  .social__link--insta svg {
+  .social__link--twitter svg {
     width: 23px;
     height: 23px; }
   .social__link--fb svg {

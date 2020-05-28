@@ -90,6 +90,8 @@
   padding: 10px;
   font-size: 16px;
   line-height: 20px;
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .suggestion__form-required {
@@ -199,7 +201,7 @@
     & > li {
       margin-top: 20px;
     }
-  } 
+  }
 
   .suggestion__form > fieldset:nth-child(4) > .wrapper {
     padding-right: 70px;
